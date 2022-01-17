@@ -17,7 +17,7 @@ Connect.on("message", msg =>{
       msg.author.send("ezt akartad rossz helyre küldeni " + msg.content);}*/
     //console.log(msg.content);
     //msg.client.channels.get("700327775311233044").send(msg.author + msg.content);
-    if (msg.author==="ClydeBot#1") { msg.delete(); }
+    if (msg.author==="335072847867412480") { msg.delete(); }
     if (msg.content.indexOf(Prefix)===0){
         var arg = msg.content.substring(Prefix.length).split(" ");
         var isSetPrefix = true;
@@ -76,8 +76,15 @@ Connect.on("message", msg =>{
                     msg.reply("Te!");
             }else if (arg.indexOf("ki") != -1) {        
                      msg.reply("te!");
-             }else if (arg.indexOf("imádlak") != -1 && arg.indexOf("szolgám") != -1 && arg.indexOf("szolgám")-arg.indexOf("imádlak") === 1) {
-                    msg.reply(":kissing heart: ugyan, az az és dolgom");
+            }else if (arg.indexOf("imádlak") != -1 && arg.indexOf("szolgám") != -1 && arg.indexOf("szolgám")-arg.indexOf("imádlak") === 1) {
+                    msg.reply(":kissing heart: ugyan, az az én dolgom");
+            }else if(arg.indexOf("gyere dugni") != -1){
+                var voiceChannel = msg.member.voice.channel;
+                voiceChannel.join();
+            }else if (arg.indexOf("beszéjjé") != -1){
+                if (member(700056124497330247).voice.channel != null){
+                    msg.member.voice.channel.join();
+                }
             }
     }
     console.log(arg);
